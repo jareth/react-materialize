@@ -9,7 +9,7 @@ class Modal extends React.Component {
   }
 
   render() {
-    let {header, trigger, children, fixedFooter, bottomSheet, ...props} = this.props;
+    let {header, trigger, children, fixedFooter, bottomSheet, footer, ...props} = this.props;
     let classes = {modal: true};
     classes['modal-fixed-footer'] = this.props.fixedFooter;
     classes['bottom-sheet'] = this.props.bottomSheet;
@@ -21,7 +21,7 @@ class Modal extends React.Component {
               {children}
             </div>
             <div className="modal-footer">
-              <Button waves='light' modal='close' flat>Close</Button>
+              {footer}
             </div>
           </div>
         }>
@@ -50,11 +50,17 @@ Modal.propTypes = {
    * @default false
    */
   bottomSheet: React.PropTypes.bool,
+  /**
+   * optional footer content
+   * @default <Button waves='light' modal='close' flat>Close</Button>
+   */
+  footer: React.PropTypes.node,
 }
 
 Modal.defaultProps = {
   fixedFooter: false,
   bottomSheet: false,
+  footer: <Button waves='light' modal='close' flat>Close</Button>,
 }
 
 export default Modal;
