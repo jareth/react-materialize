@@ -4,13 +4,12 @@ import cx from 'classnames';
 class CardPanel extends React.Component {
   render() {
     let classes = {
-      'card-panel': true,
-      'teal': true
+      'card-panel': true
     };
     let {className, children, ...props} = this.props;
     return (
       <div className={cx(classes, className)}>
-        <span className="white-text">{children}</span>
+        {children}
       </div>
     );
   }
