@@ -27,7 +27,7 @@ class Navbar extends React.Component {
     };
     return (
       <nav>
-        <div className='nav-wrapper'>
+        <div className={cx('nav-wrapper', className)}>
           <Col s={12}>
             <a href='/' className={cx(brandClasses)}>{brand}</a>
             <ul className={cx(className, classes)}>
